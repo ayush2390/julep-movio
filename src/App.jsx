@@ -37,7 +37,6 @@ function App() {
         {conversation.map((item, index) => (
           <p key={index} className={item.role}>
             {item.message}
-            {item.role}
           </p>
         ))}
       </div>

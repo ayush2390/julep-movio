@@ -15,7 +15,6 @@ const apiKey = process.env.JULEP_API_KEY; // Replace with your actual API key
 const client = new julep.Client({ apiKey });
 
 const app = express();
-const port = process.env.PORT || 3000;
 
 // Middleware
 app.use(bodyParser.json());
@@ -36,7 +35,7 @@ app.post("/chat", async (req, res) => {
 
     const agent = await client.agents.create({
       name: "Movie suggesting assistant",
-      // model: "gpt-4-turbo",
+      model: "gpt-4-turbo",
     });
 
     const session = await client.sessions.create({
@@ -65,6 +64,6 @@ app.post("/chat", async (req, res) => {
 });
 
 // Start the server
-app.listen(port, () => {
-  console.log(`Server is running on port ${port}`);
+app.listen(3000, () => {
+  console.log(`Server is running on port 3000`);
 });
