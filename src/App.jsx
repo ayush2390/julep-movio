@@ -13,9 +13,12 @@ function App() {
     setQuery("");
 
     try {
-      const response = await axios.post("http://localhost:3000/chat", {
-        query,
-      });
+      const response = await axios.post(
+        "https://movio-backend-snowy.vercel.app/chat",
+        {
+          query,
+        }
+      );
 
       const agentResponse = response.data.response;
 
